@@ -1,0 +1,98 @@
+=> cách để tạo một function cơ bản cho tiện thì mình dùng lệnh "rafce"
+
+
+
+* DOM(Document Object Model): thứ sẽ theo kế hoạch và sẽ the những gì được lưu sẵn trong DOM, và DOM tồn tại ngay cả khi chưa ai bấm gì hết.
++ DOM lưu kế hoạch: ví dụ mỗi nút là 1 node trên cây, mỗi node có thông tin riêng(id, class, text,...)
+DOM (Document Object Model) là một khái niệm cốt lõi trong phát triển web, và trong React, khi bạn nghe nhắc đến DOM thì chủ yếu có hai ý chính:
+
+DOM bình thường (truyền thống):
+
+Là cấu trúc dạng cây (tree structure) đại diện cho nội dung HTML của trang web.
+
+Khi bạn thay đổi DOM (ví dụ thêm phần tử, đổi nội dung), trình duyệt phải cập nhật lại giao diện, điều này có thể gây chậm nếu thay đổi nhiều lần.
+
+Virtual DOM trong React:
+
+React không làm việc trực tiếp với DOM thật (real DOM) mỗi lần có thay đổi.
+
+Thay vào đó, React dùng một Virtual DOM — một bản sao nhẹ của DOM thật trong bộ nhớ.
+
+Khi dữ liệu thay đổi, React so sánh (diff) phiên bản Virtual DOM mới với bản cũ → chỉ thay đổi những phần thực sự khác trên real DOM.
+
+Điều này giúp tối ưu hiệu suất cực tốt (nhanh hơn rất nhiều so với thao tác trực tiếp với DOM).
+
+Tóm lại:
+
+"DOM" là cấu trúc cây HTML.
+
+React sử dụng Virtual DOM để quản lý cập nhật hiệu quả hơn thay vì thao tác trực tiếp lên DOM thật.
+
+Cách này giúp các ứng dụng React chạy nhanh, mượt và hiệu quả hơn.
+
+- DOM là cách trình duyệt mô tả toàn bộ trang web dưới dạng một cây các đối tượng (elements: button, input, p, div...).
+
+Khi người dùng thao tác (click chuột, nhập liệu, rê chuột...),
+→ một event (sự kiện) được tạo ra.
+→ Một function (hàm) được gán cho sự kiện đó sẽ chạy.
+→ Trong function, bạn sẽ thay đổi DOM → trình duyệt hiển thị kết quả mới cho người dùng thấy.
+
+1. Declaration Function (Khai báo hàm)
+- Là kiểu khai báo hàm thông thường trong JavaScript.
+
+- Cú pháp bắt đầu với từ khóa function, sau đó là tên hàm, tham số và phần thân hàm.
+
+- Hàm dạng này được hoisting (nghĩa là bạn có thể gọi nó trước khi nó được khai báo trong mã).
+
+- Có thể gọi cái hàm trước khi mình tạo ra cái function đó
+
+
+//declaration function 
+const declarationFunction = function declarationFunction(a, b) {
+    return a + b;
+}
+console.log('declarationFunction', declarationFunction(1, 2)); // in ra kết quả của hàm declarationFunction
+
+
+2. Expression Function (Hàm dưới dạng biểu thức)
+- Là cách gán một hàm vô danh (hoặc có tên cũng được) vào một biến.
+
+- Chỉ khi dòng code đó được thực thi thì biến mới "nhận" giá trị là hàm.
+
+- Không hoisting như Declaration Function! Nghĩa là bạn phải khai báo trước rồi mới được gọi.
+
+- cần phải truyền giá trị vào đối tượng có trong function đó trước khi in ra
+
+//expression function
+const expressionFunction = function (a, b) {
+    return a + b;
+}
+console.log('expressionFunction', expressionFunction(1, 2)); // in ra kết quả của hàm expressionFunction
+
+
++ tính hoisting :
+- Khi chạy chương trình, biến và hàm được "đưa lên trên cùng" của scope trước khi code thực sự chạy.
+
+Hiểu nôm na: JavaScript đọc trước các var, function declaration (khai báo bằng function thường)
+và "đăng ký" chúng ở đầu file/scope trước khi thực thi dòng lệnh.
+
+
+3. JSX (Java Scripts XML)
+- Nó cho phép bạn viết các đoạn mã HTML trong ReactJS một cách dễ dàng và có cấu trúc hơn.
+* lưu ý:
+- trong JSX chỉ được viết một elements cha bọc ở bên ngoài.
+- để viết được 2 elements cha thì chúng ta dùng cú pháp Fragment.
+- cú pháp: <> </> (là cú pháp rỗng)
+
+
+4.Props
+- là một object được truyền vào trong một component
+- cho phép chúng ta giao tiếp giữa các components với nhau bằng cách truyền tham số qua lại giữa các components
+- khi một components cha truyển cho component con một props thì components con chỉ có thể đọc và không có quyền chỉnh sửa nó bên phía components cha
+- cách truyền một props cũng giống như cách mà bạn thêm một attributes cho một elements HTML
+
+
+
+5. Events(thứ sẽ xảy ra khi người dùng ấn vào thuộc tính)
+- hành động xảy ra khi người dùng tương tác với DOM: click, gõ phím, rê chuột,...
+- khi event xảy ra, nếu bạn đã gắn function trước đó, thì function sẽ chạy để phản hồi lại thao tác đó(ví dụ dổi màu, đổi chữ,...)

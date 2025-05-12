@@ -1,0 +1,52 @@
+.css{
+
+color: red;
+}
+
+
+
+.main{
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+.box{
+    background-color: #a16464;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 300px;
+}
+
+.main .box:nth-child(2){
+    flex: 1;
+    margin: 0px 12px 10px;
+    display: flex;
+    height: 200px;
+}
+
+.box--active{
+    display: flex;
+    background-color: #a1a1a1;
+}
+
+.input--active{
+    background-color: #920000;
+}
+
+.Input-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Nav{
+    flex-direction: column;
+}

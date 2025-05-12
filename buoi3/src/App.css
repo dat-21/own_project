@@ -1,0 +1,10 @@
+
+/* Thêm css cho ảnh */
+.product-item img {
+    width: 300px;
+    /* hoặc bạn chọn 100px, 200px tùy ý */
+    height: 200px;
+    /* giữ tỉ lệ ảnh tự nhiên */
+    object-fit: cover;
+    /* nếu muốn ảnh căng đều */
+}

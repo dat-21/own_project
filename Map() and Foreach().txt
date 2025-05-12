@@ -1,0 +1,18 @@
+
+- map() trong ReactJS duyệt qua từng phần tử trong mảng và trả về một mảng mới với các phần tử đã được biến đổi.
+
+- forEach() trong ReactJS duyệt qua từng phần tử trong mảng nhưng không trả về mảng mới, mà chỉ thực hiện một hành động nào đó với từng phần tử trong mảng.
+
+Ví dụ:
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map(number => number * 2);
+
+
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+numbers.forEach(number => console.log(number)); // 1 2 3 4 5
+
+
+
+- key trong ReactJS là một thuộc tính bắt buộc phải có khi bạn render một mảng dữ liệu
+
+- key giúp bạn xác định xem phần tử nào thay đổi, thêm mới, hay xoá đi
